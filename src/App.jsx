@@ -35,6 +35,7 @@ function App() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(nuevoEmpleado),
+        credentials: 'include',
       });
 
       if (response.status === 200) {
