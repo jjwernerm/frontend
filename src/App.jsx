@@ -32,7 +32,7 @@ function App() {
 
     try {
       // Realiza una solicitud POST al servidor back-end en Vercel
-      const response = await axios.post('https://backend-delta-weld.vercel.app/empleado', nuevoEmpleado, { withCredentials: true });
+      const response = await axios.post('https://backend-delta-weld.vercel.app/', nuevoEmpleado, { withCredentials: true });
 
       if (response.status === 200) {
         // Éxito: el empleado se agregó correctamente
@@ -53,7 +53,7 @@ function App() {
         
         <Row className="p-1">
           <Col sm={12} md={5} className="border border-3 rounded border-warning">
-            <p className="text-center fw-bold">Agregar</p>
+            <p className="text-center fw-bold">Agregarr</p>
             <div className="">
               <Form onSubmit={handleSubmit} className="p-1">
                 <Form.Group className="mb-3">
