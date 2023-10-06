@@ -1,3 +1,6 @@
+// Axios
+import axios from 'axios';
+
 // React components
 import React, { useState } from 'react';
 
@@ -29,14 +32,7 @@ function App() {
 
     try {
       // Realiza una solicitud POST al servidor back-end en Vercel
-      const response = await fetch('https://backend-delta-weld.vercel.app/empleado', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(nuevoEmpleado),
-        credentials: 'include',
-      });
+      const response = await axios.post('https://backend-delta-weld.vercel.app/empleado', nuevoEmpleado);
 
       if (response.status === 200) {
         // Éxito: el empleado se agregó correctamente
