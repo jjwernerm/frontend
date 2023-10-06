@@ -32,7 +32,7 @@ function App() {
 
     try {
       // Realiza una solicitud POST al servidor back-end en Vercel
-      const response = await axios.post('https://backend-delta-weld.vercel.app/empleado', nuevoEmpleado);
+      const response = await axios.post('https://backend-delta-weld.vercel.app/empleado', nuevoEmpleado, { withCredentials: true });
 
       if (response.status === 200) {
         // Éxito: el empleado se agregó correctamente
