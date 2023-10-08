@@ -29,7 +29,7 @@ function App() {
 
     try {
       // Realiza una solicitud POST al servidor back-end en Vercel
-      const response = await fetch('https://mi-backend.vercel.app/empleados', {
+      const response = await fetch('https://backend-delta-weld.vercel.app/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
