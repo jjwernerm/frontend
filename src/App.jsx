@@ -1,6 +1,3 @@
-// Axios
-import axios from 'axios';
-
 // React components
 import React, { useState } from 'react';
 
@@ -32,7 +29,13 @@ function App() {
 
     try {
       // Realiza una solicitud POST al servidor back-end en Vercel
-      const response = await axios.post('https://backend-delta-weld.vercel.app/', nuevoEmpleado, { withCredentials: true });
+      const response = await fetch('https://mi-backend.vercel.app/empleados', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(nuevoEmpleado),
+      });
 
       if (response.status === 200) {
         // Éxito: el empleado se agregó correctamente
@@ -50,10 +53,10 @@ function App() {
   return (
     <>
       <Container fluid>
-        
+
         <Row className="p-1">
           <Col sm={12} md={5} className="border border-3 rounded border-warning">
-            <p className="text-center fw-bold">Agregarr</p>
+            <p className="text-center fw-bold">Agregar</p>
             <div className="">
               <Form onSubmit={handleSubmit} className="p-1">
                 <Form.Group className="mb-3">
@@ -91,7 +94,7 @@ function App() {
             <p className="text-center fw-bold">Consulta Individual</p>
           </Col>
         </Row>
-        
+
         <Row className="p-1">
           <Col sm={12} md={5} className="border border-primary mb-1">
             <p className="text-center fw-bold">Modificar</p>
@@ -101,7 +104,7 @@ function App() {
             <p className="text-center fw-bold">Eliminar</p>
           </Col>
         </Row>
-        
+
         <Row className="p-1">
           <Col className="border border-success">
             <p className="text-center fw-bold">Consulta General</p>
